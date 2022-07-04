@@ -35,11 +35,11 @@
             }
 
             .sidebar {
-                flex: 1;
+                flex: 1.2;
             }
 
             .casefold {
-                flex: 1;
+                flex: 1.2;
             }
 
             .paragraf {
@@ -88,7 +88,7 @@
                 background-color: wheat;
                 box-sizing: border-box;
                 padding: 20px;
-                flex:2;
+                flex:1.8;
                 text-align: justify;
             }
 
@@ -205,7 +205,9 @@
                     <div class="stopword">
                         <aside> (Menghilangkan Awalan 1 = True)<br>
                             Menghilangkan Akhiran<br>
-                        (kan, an, i)
+                        (kan, an, i)<br><br>
+                        <?php foreach($FPRtoken as $fpr){
+                        echo $fpr . ' ';}?>
                         </aside>
                     </div>
                 </div>
@@ -215,6 +217,8 @@
                 echo $srt . ' ';}?>
                 <br>
                 <hr>
+                <br>
+                <br>
                     <h2>Lolos Dari Aturan</h2>
                     <?php foreach($nonSRtoken as $nsrt){
                     echo $nsrt . ' ';}?>
@@ -231,6 +235,10 @@
                         <aside> (Menghilangkan Akhiran = True)<br>
                             Menghilangkan Awalan 2<br>
                         (bel, pel, ber, per, pe, be)
+                        <br>
+                        <br>
+                        <?php foreach($SRtoken as $srt){
+                        echo $srt . ' ';}?>
                         </aside>
                     </div>
                 </div>
@@ -256,15 +264,25 @@
                         <aside> (Menghilangkan Awalan 1 = False)<br>
                             Menghilangkan Awalan 2<br>
                         (bel, pel, ber, per, pe, be)
+                        <br>
+                        <br>
+                        <?php foreach($nonFPRtoken as $nfpr){
+                    echo $nfpr . ' ';}?>
                         </aside>
                     </div>
                 </div>
                 <main>
+                    <br>
+                    <br>
+                    <br>
                     <h2>Terkena Aturan</h2>
                     <?php foreach($SPRtoken as $sprt){
                 echo $sprt . ' ';}?>
                 <br>
                 <hr>
+                <br>
+                <br>
+                <br>
                     <h2>Lolos Dari Aturan</h2>
                     <?php foreach($nonSPRtoken as $nsprt){
                     echo $nsprt . ' ';}?>
@@ -281,6 +299,10 @@
                         <aside> (Lanjutan Menghilangkan Awalan 2)<br>
                             Menghilangkan Akhiran<br>
                             (kan, an, i)
+                            <br>
+                            <br>
+                            <?php foreach($SPRtoken as $sprt){
+                echo $sprt . ' ';}?>
                         </aside>
                     </div>
                 </div>
@@ -310,22 +332,13 @@
 
             <div class="content">
                 <div class="sidebar">
-                    <div class="stopword">
                         <aside> Sesudah</aside>
-                    </div>
                 </div>
                 <main>
                     <div class="padtop"></div>
-                    <?php foreach($SPRtoken as $sprt){
-                    echo $sprt . ' ';}?>
-                    <?php foreach($nonSPRtoken as $nsprt){
-                    echo $nsprt . ' ';}?>
-                    <?php foreach($SRtoken1 as $srt1){
-                    echo $srt1 . ' ';}?>
-                    <?php foreach($nonSRtoken1 as $nsrt1){
-                    echo $nsrt1 . ' ';}?>
+                    <?php foreach($finalToken as $final){
+                    echo $final . ' ';}?>
                 <br>
-                <hr>
                 </main>
             </div>
         </div>
