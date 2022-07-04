@@ -6,10 +6,10 @@ $docFile = "Docs/doc1.txt";
 $doc = file_get_contents($docFile);
 
 //Case Folding
-$doc = strtolower($doc);
+$docfold = strtolower($doc);
 
 //Membagi per Paragraf
-$paragraphs = SeparateByNewLine($doc);
+$paragraphs = SeparateByNewLine($docfold);
 
 //Filtering
 $filteredParagraphs = Filtering($paragraphs);
