@@ -36,8 +36,8 @@ SecondPrefixRemoval($SRtoken,$SPRtoken1,$nonSPRtoken1);
 SuffixRemoval($SPRtoken,$SRtoken1,$nonSRtoken1);
 
 //nonSRtoken + (SPRtoken1 + nonSPRtoken1) + (SRtoken1 + nonSPRtoken + nonSRtoken1)
-$finalToken = array_merge($nonSRtoken,$SPRtoken1,$nonSPRtoken1,$SRtoken1,$nonSPRtoken,$nonSRtoken1);
-PrintArray($finalToken);
+$finalToken = array_merge($nonSRtoken,$SPRtoken1,$nonSPRtoken1,$SRtoken1,$nonSRtoken1);
+//PrintArray($finalToken);
 
 //untuk token tanpa duplikat
 $uniqueFinalToken = array_values(array_unique($finalToken));
